@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #ff4081;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 20px;
+    display: none;
+}
+
+.heart {
+    font-size: 50px;
+    color: #ff4081;
+    margin-top: 30px;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+}
+
+#finalImage {
+    display: none;
+    margin-top: 20px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}

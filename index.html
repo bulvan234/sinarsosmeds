@@ -1,100 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesan Buat Oga</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #ff4081;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-        p {
-            font-size: 18px;
-            margin-top: 20px;
-            display: none;
-        }
-        .heart {
-            font-size: 50px;
-            color: #ff4081;
-            margin-top: 30px;
-            cursor: pointer;
-            animation: heartbeat 1.5s infinite;
-        }
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Sinar Sosmed</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Hai Oga kesayangankuuuuuu!</h1>
-        <p id="message1">Klik hatinya ya...</p>
-        <p id="message2">Masih belum cukup, klik lagi!</p>
-        <p id="message3">Lagi dong, klik lagi...</p>
-        <p id="message4">Terus, terus...</p>
-        <p id="message5">Hampir sampai, jangan berhenti!</p>
-        <p id="message6">Dikit lagi nih...</p>
-        <p id="message7">Semangat, klik lagi...</p>
-        <p id="message8">Sedikit lagi...</p>
-        <p id="message9">Kamu udah deket banget...</p>
-        <p id="message10">Masih klik, ya!</p>
-        <p id="message11">Oga kesayangankuuuuuu, klik sekali lagi!</p>
-        <p id="finalMessage" style="display:none;">Aku cuma mau bilang, aku sayang banget sama kamu ❤️</p>
-        <div class="heart" id="heart">❤️</div>
+    <header>
+        <h3>Sinar Sosmed</h3>
+        <input type="text" id="search" placeholder="Cari produk..." oninput="searchProducts()">
+    </header>
+    
+    <main>
+        <div id="productGrid"></div>
+    </main>
+    
+    <!-- Halaman pengelolaan keranjang -->
+    <div id="cartPage" style="display: none;">
+        <h2>Keranjang Anda</h2>
+        <div id="cartItemsPage"></div>
+        <div id="totalPricePage">Total: Rp0</div>
+        
+        <!-- Tombol Checkout -->
+        <button onclick="proceedCheckout()">Checkout</button>
+        
+        <!-- Tombol Kembali -->
+        <div class="back-button">
+            <button onclick="returnToShop()">Kembali</button>
+        </div>
     </div>
 
-    <script>
-        let clickCount = 0;
-        const heart = document.getElementById('heart');
-        const messages = [
-            document.getElementById('message1'),
-            document.getElementById('message2'),
-            document.getElementById('message3'),
-            document.getElementById('message4'),
-            document.getElementById('message5'),
-            document.getElementById('message6'),
-            document.getElementById('message7'),
-            document.getElementById('message8'),
-            document.getElementById('message9'),
-            document.getElementById('message10'),
-            document.getElementById('message11')
-        ];
-        const finalMessage = document.getElementById('finalMessage');
+    <!-- Halaman pengelolaan wishlist -->
+    <div id="wishlistPage" style="display: none;">
+        <h2>Wishlist Anda</h2>
+        <div id="wishlistContainer"></div>
+        
+        <!-- Tombol Kembali -->
+        <div class="back-button">
+            <button onclick="returnToShop()">Kembali</button>
+        </div>
+    </div>
 
-        heart.addEventListener('click', function() {
-            if (clickCount < 11) {
-                messages[clickCount].style.display = 'none';
-                clickCount++;
-                if (clickCount < 11) {
-                    messages[clickCount].style.display = 'block';
-                }
-            } else {
-                heart.style.display = 'none';
-                finalMessage.style.display = 'block';
-            }
-        });
+    <!-- Tombol Keranjang dan Wishlist di Bawah -->
+    <div id="floating-buttons" style="position:fixed;bottom:10px;right:10px;z-index:100;">
+        <a href="javascript:void(0)" onclick="showCartPage()" style="margin-right: 10px;">
+            <img src="cart.jpg" alt="Keranjang" style="width:50px;height:50px;">
+        </a>
+        <a href="javascript:void(0)" onclick="showWishlist()">
+            <img src="wishlist.jpg" alt="Wishlist" style="width:50px;height:50px;">
+        </a>
+    </div>
 
-        // Tampilkan pesan pertama saat halaman pertama kali dibuka
-        messages[0].style.display = 'block';
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,47 +1,68 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f8f9fa;
-    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+.product-card {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin: 5.5px;
+    padding: 5.5px;
     text-align: center;
-    padding: 50px;
-}
-
-h1 {
-    color: #ff4081;
-}
-
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: inline-block;
+    width: 160px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-p {
-    font-size: 18px;
-    margin-top: 20px;
-    display: none;
+#floating-buttons img {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.heart {
-    font-size: 50px;
-    color: #ff4081;
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.back-button {
     margin-top: 30px;
-    cursor: pointer;
-    animation: heartbeat 1.5s infinite;
 }
 
-#finalImage {
-    display: none;
-    margin-top: 20px;
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
+#cartItemsPage img, #wishlistContainer img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
 }

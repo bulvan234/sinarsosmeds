@@ -2,67 +2,144 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Warna latar belakang keseluruhan */
 }
 
 header {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #007bff; /* Warna latar belakang header */
+    color: white; /* Warna teks header */
+    padding: 15px; /* Ruang dalam header */
+    display: flex; /* Menggunakan Flexbox untuk tata letak */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+    width: 100%; /* Lebar penuh */
+    position: fixed; /* Membuat header tetap terlihat saat scroll */
+    top: 0; /* Menempel di bagian atas */
+    z-index: 1000; /* Pastikan header di atas konten lainnya */
 }
 
-header h3 {
-    margin: 0;
-    font-size: 20px;
+.header-left {
+    flex: 0 0 50px; /* Mengatur lebar tetap untuk gambar */
+}
+
+.header-image {
+    width: 50px; /* Ukuran gambar */
+    height: 50px; /* Ukuran gambar */
+    border-radius: 50%; /* Membuat gambar bulat */
+}
+
+.header-center {
+    flex-grow: 1; /* Mengisi ruang yang tersedia di tengah */
+    text-align: center; /* Menyelaraskan teks di tengah */
+}
+
+header h1 {
+    margin: 0; /* Menghilangkan margin pada judul */
+    font-size: 24px; /* Ukuran font judul yang lebih besar */
+}
+
+.search-container {
+    margin-top: 10px; /* Jarak antara judul dan input pencarian */
+    width: 100%; /* Lebar penuh untuk input pencarian */
+    display: flex; /* Menggunakan Flexbox untuk tata letak input pencarian */
+    justify-content: center; /* Menyelaraskan input pencarian di tengah */
 }
 
 input[type="text"] {
-    padding: 8px;
-    margin-right: 10px;
-    border-radius: 4px;
-    border: none;
+    padding: 10px; /* Ruang dalam input */
+    margin-left: 10px; /* Jarak di sebelah kiri */
+    border-radius: 4px; /* Sudut melengkung pada input */
+    border: none; /* Tanpa border */
+    width: 50%; /* Lebar input */
+    max-width: 400px; /* Lebar maksimum input */
+}
+
+main {
+    padding-top: 100px; /* Memberi ruang di atas konten utama agar tidak tertutup header */
+}
+
+#productGrid {
+    display: flex; /* Menggunakan Flexbox untuk menyusun produk */
+    flex-wrap: wrap; /* Membungkus produk ke baris berikutnya */
+    justify-content: center; /* Menyelaraskan produk di tengah */
 }
 
 .product-card {
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    margin: 5.5px;
-    padding: 5.5px;
-    text-align: center;
-    display: inline-block;
-    width: 160px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dee2e6; /* Border dengan warna abu-abu terang */
+    border-radius: 5px; /* Sudut melengkung */
+    margin: 5.5px; /* Jarak di semua sisi */
+    padding: 0; /* Menghapus padding dari kartu */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    display: inline-block; /* Menjadikan elemen inline-block */
+    width: 160px; /* Lebar tetap untuk kartu produk */
+    background-color: #add8e6; /* Latar belakang berwarna biru muda */
+    color: black; /* Warna teks menjadi hitam untuk kontras */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan pada kartu */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Animasi saat hover */
+}
+
+.product-card:hover {
+    background-color: #e0f7fa; /* Ubah warna saat hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Menambah efek bayangan */
+}
+
+.product-image {
+    width: 100%; /* Lebar gambar menyesuaikan kontainer */
+    height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+    border-radius: 5px 5px 0 0; /* Sudut melengkung di atas */
+}
+
+.price-container {
+    background-color: #f0f0f0; /* Warna latar belakang untuk bagian harga */
+    padding: 10px; /* Ruang dalam bagian harga */
+    border-radius: 0 0 5px 5px; /* Sudut melengkung di bawah */
+}
+
+.price {
+    font-size: 16px; /* Ukuran font untuk harga */
+    color: #28a745; /* Warna teks harga (hijau) */
+    font-weight: bold; /* Menebalkan teks harga */
+}
+
+.add-to-cart {
+    background-color: #28a745; /* Warna hijau */
+    color: white; /* Warna teks putih */
+    border: none; /* Tanpa border */
+    padding: 10px; /* Ruang dalam tombol */
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Ubah kursor saat hover */
+    margin-top: 10px; /* Jarak atas */
+    transition: background-color 0.3s; /* Animasi saat hover */
+}
+
+.add-to-cart:hover {
+    background-color: #218838; /* Ubah warna saat hover */
 }
 
 #floating-buttons img {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50px; /* Ukuran ikon keranjang dan wishlist */
+    height: 50px; /* Ukuran ikon keranjang dan wishlist */
+    background-color: #fff; /* Latar belakang putih */
+    border-radius: 50%; /* Membuat gambar bulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan pada gambar */
 }
 
 .notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1000;
+    position: fixed; /* Posisi tetap di atas kanan */
+    top: 20px; /* Jarak dari atas */
+    right: 20px; /* Jarak dari kanan */
+    background-color: #28a745; /* Warna hijau */
+    color: white; /* Warna teks putih */
+    padding: 10px; /* Ruang dalam notifikasi */
+    border-radius: 5px; /* Sudut melengkung */
+    z-index: 1000; /* Pastikan notifikasi di atas konten lainnya */
 }
 
 .back-button {
-    margin-top: 30px;
+    margin-top: 30px; /* Jarak atas untuk tombol kembali */
 }
 
 #cartItemsPage img, #wishlistContainer img {
-    margin-right: 10px;
-    width: 50px;
-    height: 50px;
+    margin-right: 10px; /* Jarak kanan untuk gambar dalam keranjang dan wishlist */
+    width: 50px; /* Ukuran gambar */
+    height: 50px; /* Ukuran gambar */
 }

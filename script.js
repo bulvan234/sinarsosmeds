@@ -4,7 +4,7 @@ const products = [
     { name: "5.000 Followers TikTok", price: "Rp50.000", img: "Tiktok.jpg" },
     { name: "7.000 Followers TikTok", price: "Rp70.000", img: "Tiktok.jpg" },
     { name: "10.000 Followers TikTok", price: "Rp95.000", img: "Tiktok.jpg" },
-    { name: "500 Followers TikTok Premium (Nondrop)🔥", price: "Rp16.000", img: "Tiktok_Premium.jpg" },
+    { name: "500 Followers TikTok Premium (Nondrop)🔥", price: "Rp16.000", img: "Tiktok.jpg" },
     { name: "1.000 Followers TikTok Premium (Nondrop)🔥", price: "Rp30.000", img: "Tiktok.jpg" },
     { name: "2.500 Followers TikTok Premium (Nondrop)🔥", price: "Rp76.000", img: "Tiktok.jpg" },
     { name: "5.000 Followers TikTok Premium (Nondrop)🔥", price: "Rp150.000", img: "Tiktok.jpg" },

@@ -38,19 +38,27 @@ header h1 {
 }
 
 .search-container {
-    margin-top: 10px; /* Jarak antara judul dan input pencarian */
-    width: 100%; /* Lebar penuh untuk input pencarian */
-    display: flex; /* Menggunakan Flexbox untuk tata letak input pencarian */
-    justify-content: center; /* Menyelaraskan input pencarian di tengah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add gap between input and dropdown */
 }
 
 input[type="text"] {
     padding: 10px; /* Ruang dalam input */
-    margin-left: 10px; /* Jarak di sebelah kiri */
+    margin-left: 1px; /* Jarak di sebelah kiri */
     border-radius: 4px; /* Sudut melengkung pada input */
     border: none; /* Tanpa border */
-    width: 50%; /* Lebar input */
+    width: 40%; /* Lebar input */
     max-width: 400px; /* Lebar maksimum input */
+}
+
+select {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
 }
 
 main {
@@ -82,39 +90,6 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Menambah efek bayangan */
 }
 
-.product-image {
-    width: 100%; /* Lebar gambar menyesuaikan kontainer */
-    height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
-    border-radius: 5px 5px 0 0; /* Sudut melengkung di atas */
-}
-
-.price-container {
-    background-color: #f0f0f0; /* Warna latar belakang untuk bagian harga */
-    padding: 10px; /* Ruang dalam bagian harga */
-    border-radius: 0 0 5px 5px; /* Sudut melengkung di bawah */
-}
-
-.price {
-    font-size: 16px; /* Ukuran font untuk harga */
-    color: #28a745; /* Warna teks harga (hijau) */
-    font-weight: bold; /* Menebalkan teks harga */
-}
-
-.add-to-cart {
-    background-color: #28a745; /* Warna hijau */
-    color: white; /* Warna teks putih */
-    border: none; /* Tanpa border */
-    padding: 10px; /* Ruang dalam tombol */
-    border-radius: 5px; /* Sudut melengkung */
-    cursor: pointer; /* Ubah kursor saat hover */
-    margin-top: 10px; /* Jarak atas */
-    transition: background-color 0.3s; /* Animasi saat hover */
-}
-
-.add-to-cart:hover {
-    background-color: #218838; /* Ubah warna saat hover */
-}
-
 #floating-buttons img {
     width: 50px; /* Ukuran ikon keranjang dan wishlist */
     height: 50px; /* Ukuran ikon keranjang dan wishlist */
@@ -123,23 +98,52 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan pada gambar */
 }
 
-.notification {
-    position: fixed; /* Posisi tetap di atas kanan */
-    top: 20px; /* Jarak dari atas */
-    right: 20px; /* Jarak dari kanan */
-    background-color: #28a745; /* Warna hijau */
-    color: white; /* Warna teks putih */
-    padding: 10px; /* Ruang dalam notifikasi */
-    border-radius: 5px; /* Sudut melengkung */
-    z-index: 1000; /* Pastikan notifikasi di atas konten lainnya */
+button[onclick="proceedCheckout()"] {
+    width: 100%; /* Membuat tombol checkout penuh lebarnya */
+    max-width: 400px; /* Atur lebar maksimal */
+    display: block; /* Menjadikan tombol block agar lebar bisa diatur penuh */
+    margin: 0 auto; /* Pusatkan tombol */
 }
 
-.back-button {
-    margin-top: 30px; /* Jarak atas untuk tombol kembali */
+/* Styling untuk kartu produk (lebih kecil) */
+.product-card {
+    width: 102px; /* Ubah lebar kartu produk menjadi lebih kecil */
+    margin: 5px; /* Kurangi margin untuk memperkecil jarak antar kartu */
+    padding: 5px; /* Kurangi padding di dalam kartu */
+    text-align: center;
+    background-color: #add8e6;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-#cartItemsPage img, #wishlistContainer img {
-    margin-right: 10px; /* Jarak kanan untuk gambar dalam keranjang dan wishlist */
-    width: 50px; /* Ukuran gambar */
-    height: 50px; /* Ukuran gambar */
+/* Hover effect tetap */
+.product-card:hover {
+    background-color: #e0f7fa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Gambar di dalam kartu produk (lebih kecil) */
+.product-card img {
+    width: 60px; /* Perkecil lebar gambar */
+    height: 80px; /* Perkecil tinggi gambar */
+}
+
+/* Ubah ukuran teks produk */
+.product-card h3 {
+    font-size: 12px; /* Ukuran font lebih kecil untuk judul produk */
+    margin: 11px 0; /* Kurangi jarak antar elemen di dalam kartu */
+}
+
+.product-card p {
+    font-size: 12px; /* Ukuran font lebih kecil untuk harga produk */
+    margin: 5px 0;
+}
+
+/* Atur grid produk agar lebih rapat */
+#productGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Mengatur produk agar tersebar merata */
 }

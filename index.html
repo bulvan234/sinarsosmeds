@@ -9,35 +9,26 @@
 <body>
     <header>
         <div class="header-left">
-            <img src="sns.jpg" alt="Logo" class="header-image">
         </div>
         <div class="header-center">
             <h1>SINAR SOSMED</h1>
             <div class="search-container">
                 <input type="text" id="search" placeholder="Cari produk..." oninput="searchProducts()">
+                <!-- Dropdown Kategori -->
+                <select id="categoryFilter" onchange="filterByCategory()">
+                    <option value="all">Semua</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="tiktok">TikTok</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="youtube">YouTube</option>
+                </select>
             </div>
         </div>
     </header>
 
     <main>
         <div id="productGrid">
-            <div class="product-card">
-                <img src="product-image-url-1.jpg" alt="Nama Produk 1" class="product-image">
-                <h4>Nama Produk 1</h4>
-                <div class="price-container">
-                    <span class="price">Rp 100.000</span>
-                </div>
-                <button class="add-to-cart">Tambah ke Keranjang</button>
-            </div>
-            <div class="product-card">
-                <img src="product-image-url-2.jpg" alt="Nama Produk 2" class="product-image">
-                <h4>Nama Produk 2</h4>
-                <div class="price-container">
-                    <span class="price">Rp 200.000</span>
-                </div>
-                <button class="add-to-cart">Tambah ke Keranjang</button>
-            </div>
-            <!-- Tambahkan lebih banyak produk sesuai kebutuhan -->
+            <!-- Produk ditampilkan di sini -->
         </div>
     </main>
 
